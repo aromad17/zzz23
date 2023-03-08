@@ -1,14 +1,14 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './styles/App.css'
-import Navigation from './components/Navigation'
+import Navigation from './components/Navigatgition'
 import Home from './routes/Home'
 import About from './routes/About'
 import Detail from './routes/Detail'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Navigation />
       <Routes>
         <Route path='/' element={<Home />} />
