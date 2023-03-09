@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import '../styles/Detail.css'
 
 function Detail() {
@@ -10,6 +10,10 @@ function Detail() {
   console.log(location);
   const { id, year, title, summary, poster, genres } = location.state;
 
+  const navigate = useNavigate();
+  if (location.state === undefined) {
+    navigate('/'); // 홈으로 이동 즉 리다이렉트가 가능하다
+  }
 
   return (
     <div className='detail'>
