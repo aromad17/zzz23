@@ -7,8 +7,9 @@ function Detail() {
 
   const location = useLocation();
   // useLocation으로 전달받은 스테이트를 가져올수있다.
-  console.log(location);
   const { id, year, title, summary, poster, genres } = location.state;
+  console.log(location);
+  console.log(location.state);
 
   const navigate = useNavigate();
   if (location.state === undefined) {
